@@ -16,6 +16,7 @@ def train_model(X_train, y_train, n_estimators=100, max_depth=None):
     return model
 def evaluate_model(model, X_test, y_test):
     predictions = model.predict(X_test)
+    print(classification_report(y_test, predictions))
     acc = accuracy_score(y_test, predictions)
     report = classification_report(y_test, predictions)
     return acc, report
@@ -24,6 +25,7 @@ def main():
     model = train_model(X_train, y_train)
     acc, report = evaluate_model(model, X_test, y_test)
     print(f"Accuracy: {acc:.4f}")
+    print("Classification Report:")
     print(report)
     joblib.dump(model, "models/iris_model.joblib")
     print("Model saved to models/iris_model.joblib")
