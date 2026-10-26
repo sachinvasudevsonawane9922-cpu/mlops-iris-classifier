@@ -29,3 +29,9 @@ mlruns/
 mlflow.db
 mlartifacts/
 confusion_matrix_*.png
+# Test and coverage reports
+.coverage
+.coverage.*
+htmlcov/
+test-results.xml
+.pytest_cache/
